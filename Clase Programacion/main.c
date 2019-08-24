@@ -18,6 +18,8 @@ int main()
     int acumuladorDeEdades=0;
     int contadorPersonas=0;
     float promedioEdades;
+    float acumuladorDeAlturas=0;
+    float promedioAlturas;
     int flagPetiso = 0;
     int flagPersonaJoven=0;
     int flagVieja=0;
@@ -42,11 +44,10 @@ int main()
         printf("Ingrese sexo (f/m): ");
         sexo = getche();
         sexo = tolower(sexo);
-        while(sexo!='f' && sexo!='m');
+        while(sexo!='f' && sexo!='m')
         {
             printf("\nReingrese sexo: ");
-            sexo = getche();
-            sexo = tolower(sexo);
+            sexo=tolower(getche());
         }
         if(sexo=='f')
         {
@@ -76,6 +77,7 @@ int main()
 
         contadorPersonas++;
         acumuladorDeEdades = acumuladorDeEdades + edad;
+        acumuladorDeAlturas = acumuladorDeAlturas + altura;
 
         printf("\nDesea continuar? (s/n): ");
         fflush(stdin);
@@ -83,10 +85,12 @@ int main()
 
     }while(seguir == 's');
     promedioEdades = (float)acumuladorDeEdades/contadorPersonas;
+    promedioAlturas = acumuladorDeAlturas/contadorPersonas;
 
     printf("La altura de la mujer mas vieja es: %f\n", alturaMujerMasVieja);
     printf("La altura de la persona mas joven es: %f\n", alturaPersonaMasJoven);
     printf("La edad del hombre mas bajo es: %d\n", edadHombreMasBajo);
-    printf("El promedio es: %f", promedioEdades);
+    printf("El promedio de edades es:: %f\n", promedioEdades);
+    printf("El promedio de altura es: %f", promedioAlturas);
     return 0;
 }
