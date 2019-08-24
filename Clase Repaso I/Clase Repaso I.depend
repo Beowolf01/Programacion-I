@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1566658853 source:c:\users\alumno\desktop\programacion-i-master\clase repaso i\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
